@@ -117,4 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAEF0lEQVR4Xu3dzVEcSRSFUZkg
+        kzRjwZggE2QCJowJmIAJmIAJY4I8YDLjVhNF9+0KYKfKszgLPipbG16gon7y2+vrK3BHjUDUCESNQNQI
+        RI1A1AhEjUDUCESNQNQIRI1A1AhEjUDUCESNQNQIRI1A1AhEjUDUCESNQNQIRI1A1AhEjUDUCESNQNQI
+        RI1A1AhEjUDUCESNQNQIRI1A1HjPXz/+/j78gD/Y9/azfU+NF/PDhl/D8/AKJ/IyzJ/tw4GpcRoL/xl+
+        D+3D4Szmz/hDm4GpxrHgcfcBsIL5M3/z2+TdF9M46N/dIljJ4/U8vPtiHDBPYtpCWMWv/UxcD8h/VwfD
+        auY5ydt/tfbDMU/K2wJYzdtvkf2AODGHeG4D4loHbNqA1ANhRQYEDhgQOGBA4EAbEPddwaYNiL9iwaYN
+        iHuwIOp1EPdhQfy8GZBtSNyLxer6vVjbgPgtwuru3807jQMerhbAKo6fB7kYBzphZzU3wzHdhIuxYN7+
+        7pyEs5vnHO/+W7VX495Y/HN42j6o/QPwJ5rX/b7+VhPAgMChGoGoEYgagagRiBqBqBGIGoGoEYgagagR
+        iBqBqBGIGoGoEYgagagRiBqBqBGIGoGoEYgagagRiBqBqBGIGoGo8WK+t3SY7+a1fyFn8zJ8/d28Y+F8
+        u7sXVnN2n3+7+1jwuPsAWMHH9gcZB9o8h1Ud7zA1DrBHIau7v0fh+KYdpVhd3+V2xHlS3hbAat5+i+wH
+        xIk5xHMbENc6YNMGpB4IKzIgcMCAwAEDAgcMCBxoA+KvWLBpA+I6CES9DuJKOsTtlfRtSNyLxer6vVjb
+        gLibl9Xdv5t3Ggc8XC2AVRw/D3IxDvTQFKv52BOFF2PBPGl3TsLZff6Z9L2xeL7V5Gn7MDiLed3v6281
+        AQwIHKoRiBqBqBGIGoGoEYgagagRiBqBqBGIGoGoEYgagagRiBqBqBGIGoGoEYgagagRiBqBqBGIGoGo
+        EYgagagRiBov5ntLh/luXvsXcjYvw9ffzTsWzre7zzdftw+Hs/j8293HAht6spqP7Q8yDrR5Dqs63mFq
+        HGCPQlZ3f4/C8U07SrG6vsvtiPZJh7jdJ31EJ+YQz21AXOuATRuQeiCsyIDAAQMCBwwIHDAgcKANiL9i
+        waYNiOsgEPU6iCvpELdX0rchcS8Wq+v3Ym0D4m5eVnf/bt5pHPBwtQBWcfw8yMU40ENTrOZjTxRejAXz
+        pN05CWf3+WfS98bi+VaTp+3D4Czmdb+vv9UEMCBwqEYgagSiRiBqBKJGIGoEokYgagSiRiBqBKJGIGoE
+        okYgagSiRiBqBKJGIGoEokYgagSiRiBqBKJGIGoEokYgagSiRiBqBKJGIGoEokYgagSiRiBqBKJGIGoE
+        okYgagSm12//A7pOSFTE9LKtAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>
