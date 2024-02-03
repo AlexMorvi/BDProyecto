@@ -19,7 +19,14 @@ namespace BDProyecto
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            if(menuVertical.Width == 246)
+            {
+                menuVertical.Width = 76;
+            }
+            else
+            {
+                menuVertical.Width = 246;
+            }
         }
     }
 }
