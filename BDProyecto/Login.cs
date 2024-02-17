@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Drawing.Text;
 namespace BDProyecto
 {
     public partial class Login : Form
@@ -88,6 +89,33 @@ namespace BDProyecto
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtUser.Text != "USUARIO")
+            {
+                if (txtPass.Text != "CONTRASEÑA")
+                {
+
+                }
+                else
+                {
+                    msgError("Ingresa la Contraseña");
+                }
+            }
+            else
+            {
+                msgError("Ingresa el Usuario");
+            }
+            
+        }
+
+        private void msgError(string msg)
+        {
+            lblErrorMessage.Text = "     " + msg;
+            lblErrorMessage.Visible = true;
+
         }
     }
 }
