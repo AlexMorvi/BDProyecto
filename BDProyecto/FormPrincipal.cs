@@ -8,14 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace BDProyecto
 {
     public partial class FormPrincipal : Form
     {
-        public FormPrincipal()
+        private Conexion conexion;
+
+        public FormPrincipal(Conexion conexion)
         {
             InitializeComponent();
+            this.conexion = conexion;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -29,7 +33,7 @@ namespace BDProyecto
                 menuVertical.Width = 246;
             }
         }
-
+        
         private void panelContenedor_Paint(object sender, PaintEventArgs e)
         {
 
