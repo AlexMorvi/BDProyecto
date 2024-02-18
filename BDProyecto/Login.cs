@@ -13,6 +13,9 @@ namespace BDProyecto
 {
     public partial class Login : Form
     {
+        Conexion conexionQuito = new Conexion("BD-QUITO", "QuitoTaller", "sa", "P@ssw0rd");
+
+        Conexion conexionGuayaquil = new Conexion("BD-GUAYAQUIL", "GuayaquilTaller", "sa", "P@ssw0rd");
         public Login()
         {
             InitializeComponent();
@@ -90,14 +93,32 @@ namespace BDProyecto
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
+        
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtUser.Text != "USUARIO")
             {
                 if (txtPass.Text != "CONTRASEÑA")
                 {
-
+                    if (comboBoxBD.Text != "")
+                    {
+                        if (comboBoxBD.Text.Equals("QUITO"))
+                        {
+                            conexionQuito.abrir_Conexion();
+                        }
+                        if (comboBoxBD.Text.Equals("GUAYAQUIL"))
+                        {
+                            conexionGuayaquil.abrir_Conexion();
+                        }
+                        FormPrincipal formPrincipal = new FormPrincipal();
+                        formPrincipal.Show();
+                        this.Hide();
+                        MessageBox.Show("Conexion a SQL Exitosa");
+                    }
+                    else
+                    {
+                        msgError("Selecciona una localidad");
+                    }
                 }
                 else
                 {
@@ -115,6 +136,11 @@ namespace BDProyecto
         {
             lblErrorMessage.Text = "     " + msg;
             lblErrorMessage.Visible = true;
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
