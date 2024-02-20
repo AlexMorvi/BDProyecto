@@ -18,7 +18,7 @@ namespace BDProyecto
             using (conexion.obtener_Conexion())
             {
                 conexion.abrir_Conexion();
-                string query = "insert into cliente_Quito (nombre_cliente, apellido_cliente) " +
+                string query = "insert into cliente_nomina (nombre_cliente, apellido_cliente) " +
                     $"values ({cliente_nomina.nombre_cliente},{cliente_nomina.apellido_cliente})";
                 SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
                 retorno = cmd.ExecuteNonQuery();
@@ -33,7 +33,7 @@ namespace BDProyecto
             using (conexion.obtener_Conexion())
             {
                 conexion.abrir_Conexion();
-                string query = "select nombre_cliente, apellido_cliente";
+                string query = "select nombre_cliente, apellido_cliente from cliente_nomina";
                 SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -54,7 +54,8 @@ namespace BDProyecto
             using (conexion.obtener_Conexion())
             {
                 conexion.abrir_Conexion();
-                string query = $"update cliente_nomina set nombre_cliente={cliente_nomina.nombre_cliente}, apellido_cliente={cliente_nomina.apellido_cliente}";
+                string query = $"update cliente_nomina set nombre_cliente={cliente_nomina.nombre_cliente}, apellido_cliente={cliente_nomina.apellido_cliente}" from cliente_nomina where" +
+                    $"nombre_cliente={cliente_nomina.nombre_cliente} and apellido_cliente={cliente_nomina.apellido_cliente}";
                 SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
                 retorno = cmd.ExecuteNonQuery();
             }
