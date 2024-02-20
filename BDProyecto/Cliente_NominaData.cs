@@ -12,14 +12,14 @@ namespace BDProyecto
 {
     public class Cliente_NominaData
     {
-        public static int insertar_cliente(Cliente cliente, Conexion conexion)
+        public static int insertar_cliente_nomina(Cliente_Nomina cliente_nomina, Conexion conexion)
         {
             int retorno = 0;
             using (conexion.obtener_Conexion())
             {
                 conexion.abrir_Conexion();
-                string query = "insert into cliente_Quito (nombre_cliente, apellido_cliente, cod_taller, cedula_cliente, ciudad_residencia, telefono) " +
-                    $"values ({cliente.nombre_cliente},{cliente.apellido_cliente},{cliente.cod_taller},{cliente.cedula_cliente},{cliente.ciudad_residencia},{cliente.telefono})";
+                string query = "insert into cliente_Quito (nombre_cliente, apellido_cliente) " +
+                    $"values ({cliente_nomina.nombre_cliente},{cliente_nomina.apellido_cliente})";
                 SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
                 retorno = cmd.ExecuteNonQuery();
 
@@ -27,24 +27,20 @@ namespace BDProyecto
             conexion.cerrar_Conexion();
             return retorno;
         }
-        public static List<Cliente> mostrar_clientes(Conexion conexion)
+        public static List<Cliente_Nomina> mostrar_clientes_nomina(Conexion conexion)
         {
-            List<Cliente> lista = new List<Cliente>();
+            List<Cliente_Nomina> lista = new List<Cliente_Nomina>();
             using (conexion.obtener_Conexion())
             {
                 conexion.abrir_Conexion();
-                string query = "select nombre_cliente, apellido_cliente, cod_taller, cedula_cliente, ciudad_residencia, telefono from cliente_Quito";
+                string query = "select nombre_cliente, apellido_cliente";
                 SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Cliente cliente = new Cliente();
-                    cliente.nombre_cliente = reader.GetString(0);
-                    cliente.apellido_cliente = reader.GetString(1);
-                    cliente.cod_taller = reader.GetInt32(2);
-                    cliente.cedula_cliente = reader.GetString(3);
-                    cliente.ciudad_residencia = reader.GetString(4);
-                    cliente.telefono = reader.GetString(5);
+                    Cliente_Nomina cliente_nomina = new Cliente_Nomina();
+                    cliente_nomina.nombre_cliente = reader.GetString(0);
+                    cliente_nomina.apellido_cliente = reader.GetString(1);
                     lista.Add(cliente);
                 }
                 conexion.cerrar_Conexion();
@@ -52,27 +48,26 @@ namespace BDProyecto
             }
 
         }
-        public static int actualizar_datos_cliente(Cliente cliente, Conexion conexion)
+        public static int actualizar_datos_cliente_nomina(Cliente_Nomina cliente_nomina, Conexion conexion)
         {
             int retorno = 0;
             using (conexion.obtener_Conexion())
             {
                 conexion.abrir_Conexion();
-                string query = $"update cliente_Quito set nombre_cliente={cliente.nombre_cliente}, apellido_cliente={cliente.apellido_cliente}, cod_taller={cliente.cod_taller}, cedula_cliente={cliente.cedula_cliente}, ciudad_residencia={cliente.ciudad_residencia}, telefono={cliente.telefono} from cliente_Quito where" +
-                    $"nombre_cliente={cliente.nombre_cliente} and apellido_cliente={cliente.apellido_cliente}";
+                string query = $"update cliente_nomina set nombre_cliente={cliente_nomina.nombre_cliente}, apellido_cliente={cliente_nomina.apellido_cliente}";
                 SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
                 retorno = cmd.ExecuteNonQuery();
             }
             conexion.cerrar_Conexion();
             return retorno;
         }
-        public static int eliminar_cliente(Cliente cliente, Conexion conexion)
+        public static int eliminar_cliente_nomina(Cliente_Nomina cliente_nomina, Conexion conexion)
         {
             int retorno = 0;
             using (conexion.obtener_Conexion())
             {
                 conexion.abrir_Conexion();
-                string query = $"delete from cliente_Quito where nombre_cliente={cliente.nombre_cliente} and apellido_cliente={cliente.apellido_cliente}";
+                string query = $"delete from cliente_nomina where nombre_cliente={cliente_nomina.nombre_cliente} and apellido_cliente={cliente_nomina.apellido_cliente}";
                 SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
                 retorno = cmd.ExecuteNonQuery();
             }
