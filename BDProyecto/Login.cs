@@ -107,12 +107,14 @@ namespace BDProyecto
                             conexionQuito.abrir_Conexion();
                             FormPrincipal formPrincipal = new FormPrincipal(conexionQuito);
                             formPrincipal.Show();
+                            conexionQuito.cerrar_Conexion();
                         }
                         if (comboBoxBD.Text.Equals("GUAYAQUIL"))
                         {
                             conexionGuayaquil.abrir_Conexion();
                             FormPrincipal formPrincipal = new FormPrincipal(conexionGuayaquil);
                             formPrincipal.Show();
+                            conexionGuayaquil.cerrar_Conexion();
                         } 
                         this.Hide();
                         MessageBox.Show("Conexion a SQL Exitosa");

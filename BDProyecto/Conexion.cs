@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+using System.Data;
 
 namespace BDProyecto
 {
@@ -28,14 +30,19 @@ namespace BDProyecto
 
         public void abrir_Conexion()
         {
+
             try
             {
+                if(this.conexion.State == ConnectionState.Open) {
+                    return;
+                }
                 this.conexion.Open();
                 Console.WriteLine("Conexión abierta exitosamente.");
             }
             catch (SqlException e)
             {
                 Console.WriteLine("No se pudo establecer una conexión: " + e.Message);
+                this.conexion.Close();
             }
         }
 
@@ -50,6 +57,10 @@ namespace BDProyecto
             {
                 Console.WriteLine("No se pudo cerrar la conexión: " + e.Message);
             }
+        }
+        public SqlConnection obtener_Conexion()
+        {
+            return this.conexion;
         }
     }
 }

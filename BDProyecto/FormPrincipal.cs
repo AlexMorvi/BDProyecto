@@ -20,6 +20,7 @@ namespace BDProyecto
         {
             InitializeComponent();
             this.conexion = conexion;
+            this.conexion.abrir_Conexion();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -72,6 +73,16 @@ namespace BDProyecto
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            refrescar_consulta();
+        }
+
+        public void refrescar_consulta()
+        {
+            dataGridView.DataSource = ClienteData.mostrar_clientes(this.conexion);
         }
     }
 }
