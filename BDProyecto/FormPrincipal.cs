@@ -84,5 +84,10 @@ namespace BDProyecto
         {
             dataGridView.DataSource = ClienteData.mostrar_clientes(this.conexion);
         }
+
+        private void dataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
