@@ -66,6 +66,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Taller_Quito.cs" />
+    <Compile Include="Taller_QuitoData.cs" />
+    <Compile Include="Telefono_Quito.cs" />
+    <Compile Include="Telefono_QuitoData.cs" />
+    <Compile Include="Vehiculo_placa.cs" />
+    <Compile Include="Vehiculo_placaData.cs" />
+    <Compile Include="Vehiculo_Quito.cs" />
+    <Compile Include="Vehiculo_QuitoData.cs" />
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
