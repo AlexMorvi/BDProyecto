@@ -11,7 +11,7 @@ namespace BDProyecto
 {
     public class Conexion
     {
-        private string data_source;
+        public string data_source;
         private string initial_catalog;
         private string user_id;
         private string password;
