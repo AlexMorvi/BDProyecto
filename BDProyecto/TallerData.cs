@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace BDProyecto
 {
-    public class Taller_QuitoData
+    public class TallerData
     {
-        public static int insertar_taller(Taller_Quito taller_Quito, Conexion conexion)
+        public static int insertar_taller(Taller taller_Quito, Conexion conexion)
         {
             int retorno = 0;
             using (conexion.obtener_Conexion()) 
@@ -22,9 +22,9 @@ namespace BDProyecto
             conexion.cerrar_Conexion();
             return retorno;
         }
-        public static List<Taller_Quito> mostrar_talleres_Quito(Conexion conexion) 
+        public static List<Taller> mostrar_talleres_Quito(Conexion conexion) 
         {
-            List<Taller_Quito> lista = new List<Taller_Quito> ();
+            List<Taller> lista = new List<Taller> ();
             using (conexion.obtener_Conexion() ) 
             {
                 conexion.abrir_Conexion();
@@ -33,7 +33,7 @@ namespace BDProyecto
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read()) 
                 {
-                    Taller_Quito taller_Quito = new Taller_Quito();
+                    Taller taller_Quito = new Taller();
                     taller_Quito.cod_taller = reader.GetInt32 (0);
                     taller_Quito.nombre_taller = reader.GetString (1);
                     taller_Quito.localidad_taller = reader.GetString(2);
@@ -43,7 +43,7 @@ namespace BDProyecto
                 return lista;
             }
         }
-        public static int actualizar_datos_taller_Quito(Taller_Quito taller_Quito, Conexion conexion) 
+        public static int actualizar_datos_taller_Quito(Taller taller_Quito, Conexion conexion) 
         {
             int retorno = 0;
             using (conexion.obtener_Conexion()) 
@@ -58,7 +58,7 @@ namespace BDProyecto
             conexion.cerrar_Conexion();
             return retorno;
         }
-        public static int eliminar_taller_Quito(Taller_Quito taller_Quito, Conexion conexion) 
+        public static int eliminar_taller_Quito(Taller taller_Quito, Conexion conexion) 
         {
             int retorno = 0;
             using (conexion.obtener_Conexion()) 

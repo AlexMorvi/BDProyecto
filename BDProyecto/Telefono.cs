@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace BDProyecto
 {
-    public class Telefono_Quito
+    public class Telefono
     {
         public int cod_empleado { get; set; }
         public string telefono_empleado { get; set; }
-        public Telefono_Quito() 
+        public Telefono() 
         {
 
         }
-        public Telefono_Quito(int cod_empleado, string telefono_empleado)
+        public Telefono(int cod_empleado, string telefono_empleado)
         {
             this.cod_empleado = cod_empleado;
             this.telefono_empleado = telefono_empleado;

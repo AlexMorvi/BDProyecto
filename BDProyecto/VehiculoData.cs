@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace BDProyecto
 {
-    public class Vehiculo_QuitoData
+    public class VehiculoData
     {
-        public static int insertar_vehiculo_Quito(Vehiculo_Quito vehiculo_Quito, Conexion conexion)
+        public static int insertar_vehiculo_Quito(Vehiculo vehiculo_Quito, Conexion conexion)
         {
             int retorno = 0;
             using (conexion.obtener_Conexion())
@@ -26,9 +26,9 @@ namespace BDProyecto
             conexion.cerrar_Conexion();
             return retorno;
         }
-        public static List<Vehiculo_Quito> mostrar_vehiculos_Quito(Conexion conexion)
+        public static List<Vehiculo> mostrar_vehiculos_Quito(Conexion conexion)
         {
-            List<Vehiculo_Quito> lista = new List<Vehiculo_Quito>();
+            List<Vehiculo> lista = new List<Vehiculo>();
             using (conexion.obtener_Conexion())
             {
                 conexion.abrir_Conexion();
@@ -38,7 +38,7 @@ namespace BDProyecto
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Vehiculo_Quito vehiculo_Quito = new Vehiculo_Quito();
+                    Vehiculo vehiculo_Quito = new Vehiculo();
                     vehiculo_Quito.placa = reader.GetString(0);
                     vehiculo_Quito.nombre_cliente = reader.GetString(1);
                     vehiculo_Quito.apellido_cliente = reader.GetString(2);
@@ -52,7 +52,7 @@ namespace BDProyecto
             }
 
         }
-        public static int actualizar_vehiculos_Quito(Vehiculo_Quito vehiculo_Quito, Conexion conexion)
+        public static int actualizar_vehiculos_Quito(Vehiculo vehiculo_Quito, Conexion conexion)
         {
             int retorno = 0;
             using (conexion.obtener_Conexion())
@@ -69,7 +69,7 @@ namespace BDProyecto
             conexion.cerrar_Conexion();
             return retorno;
         }
-        public static int eliminar_vehiculo_Quito(Vehiculo_Quito vehiculo_Quito, Conexion conexion)
+        public static int eliminar_vehiculo_Quito(Vehiculo vehiculo_Quito, Conexion conexion)
         {
             int retorno = 0;
             using (conexion.obtener_Conexion())

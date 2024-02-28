@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace BDProyecto
 {
-    public class Taller_Quito
+    public class Taller
     {
         public int cod_taller { get; set; }
         public string nombre_taller { get; set; }
         public string localidad_taller { get; set; }
 
-        public Taller_Quito() 
+        public Taller() 
         {
 
         }
-        public Taller_Quito(int cod_taller, string nombre_taller, string localidad_taller)
+        public Taller(int cod_taller, string nombre_taller, string localidad_taller)
         {
             this.cod_taller = cod_taller;
             this.nombre_taller = nombre_taller;

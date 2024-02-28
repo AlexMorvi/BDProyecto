@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace BDProyecto
 {
-    public class Telefono_QuitoData
+    public class TelefonoData
     {
-        public static int insertar_telefono_Quito(Telefono_Quito telefono_Quito, Conexion conexion) 
+        public static int insertar_telefono_Quito(Telefono telefono_Quito, Conexion conexion) 
         {
             int retorno = 0;
             using (conexion.obtener_Conexion()) 
@@ -25,9 +25,9 @@ namespace BDProyecto
             conexion.cerrar_Conexion();
             return retorno;
         }
-        public static List<Telefono_Quito> mostrar_telefonos_Quito(Conexion conexion) 
+        public static List<Telefono> mostrar_telefonos_Quito(Conexion conexion) 
         {
-            List<Telefono_Quito> lista = new List<Telefono_Quito> ();
+            List<Telefono> lista = new List<Telefono> ();
             using (conexion.obtener_Conexion()) 
             {
                 conexion.abrir_Conexion ();
@@ -36,7 +36,7 @@ namespace BDProyecto
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Telefono_Quito telefono_Quito = new Telefono_Quito ();
+                    Telefono telefono_Quito = new Telefono ();
                     telefono_Quito.cod_empleado = reader.GetInt32 (0);
                     telefono_Quito.telefono_empleado  =reader.GetString (1);
                     lista.Add (telefono_Quito);
@@ -45,7 +45,7 @@ namespace BDProyecto
                 return lista;
             }
         }
-        public static int actualizar_telefonos_Quito(Telefono_Quito telefono_Quito, Conexion conexion) 
+        public static int actualizar_telefonos_Quito(Telefono telefono_Quito, Conexion conexion) 
         {
             int retorno = 0;
             using (conexion.obtener_Conexion()) 
@@ -60,7 +60,7 @@ namespace BDProyecto
             conexion.cerrar_Conexion() ;
             return retorno;
         }
-        public static int eliminar_telefono_Quito(Telefono_Quito telefono_Quito, Conexion conexion) 
+        public static int eliminar_telefono_Quito(Telefono telefono_Quito, Conexion conexion) 
         {
             int retorno = 0;
             using (conexion.obtener_Conexion()) 

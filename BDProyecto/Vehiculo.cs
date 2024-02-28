@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BDProyecto
 {
-    public class Vehiculo_Quito
+    public class Vehiculo
     {
         public string placa { get; set; }
         public string nombre_cliente { get; set; }
@@ -14,11 +14,11 @@ namespace BDProyecto
         public int cod_taller { get; set; }
         public string num_matricula { get; set; }
         public DateTime fecha_compra { get; set; }
-        public Vehiculo_Quito() 
+        public Vehiculo() 
         {
 
         }
-        public Vehiculo_Quito(string placa, string nombre_cliente, string apellido_cliente, int cod_taller, string num_matricula, DateTime fecha_compra)
+        public Vehiculo(string placa, string nombre_cliente, string apellido_cliente, int cod_taller, string num_matricula, DateTime fecha_compra)
         {
             this.placa = placa;
             this.nombre_cliente = nombre_cliente;
